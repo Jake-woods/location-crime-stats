@@ -2,22 +2,6 @@ const form = document.querySelector('form');
 const itemsContainer = document.querySelector('section#items');
 const table = document.querySelector('table#data')
 
-const crimeData = {
-   asb: 0,
-   bicycleTheft: 0,
-   burglray: 0,
-   crimalDamageArson: 0,
-   drugs: 0,
-   otherTheft: 0,
-   posOfWeps: 0,
-   publicOrder: 0,
-   robbery: 0,
-   shoplifting: 0,
-   vehicleCrime: 0,
-   violentCrime: 0,
-   otherCrime: 0,
-}
-
 const idSelector = (anId) => {
    return document.querySelector(anId);
 }
@@ -27,6 +11,22 @@ const loadData = (e) => {
    const lon = document.querySelector('#lonVal').value;
    const date = document.querySelector('select#year').value;
    const month = document.querySelector('select#month').value;
+
+   const crimeData = {
+      asb: 0,
+      bicycleTheft: 0,
+      burglray: 0,
+      crimalDamageArson: 0,
+      drugs: 0,
+      otherTheft: 0,
+      posOfWeps: 0,
+      publicOrder: 0,
+      robbery: 0,
+      shoplifting: 0,
+      vehicleCrime: 0,
+      violentCrime: 0,
+      otherCrime: 0,
+   }
 
    const url = `https://data.police.uk/api/crimes-street/all-crime?lat=${lat}&lng=${lon}&date=${date}-${month}`;
    console.log(url)
